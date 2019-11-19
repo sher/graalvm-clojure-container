@@ -4,24 +4,31 @@ pub struct Server {
     root bool
 }
 
-pub struct Options {
+pub struct ServerOptions {
 }
 
-pub struct Plugin {
-    name string
-    version string
-}
-
-pub fn (s Server) register(plugin Plugin) {
-    println(plugin)
-}
-
-pub fn create(opts Options) Server {
+pub fn create_server(o ServerOptions) Server {
     server := Server{
         root: true
     }
 
     return server
+}
+
+//------------------------------
+//- plugins
+//------------------------------
+pub struct Plugin {
+    name string
+    version string
+}
+
+pub interface Pluginer {
+    str() string
+    plugin(Server)
+}
+
+pub fn (s Server) plugin(p Pluginer) {
 }
 
 // import (
