@@ -2,12 +2,16 @@ module home
 
 import vega
 
+struct Options {
+}
+
 struct Plugin {
+pub:
     name string
     version string
 }
 
-pub fn configure() vega.Pluginer {
+pub fn config() Plugin {
     p := Plugin{
         name: 'home'
         version: '0.0.1'
@@ -16,9 +20,13 @@ pub fn configure() vega.Pluginer {
     return p
 }
 
-pub fn (p Plugin) str() string {
-    return '$p.name@$p.version'
+pub fn (p Plugin) name() string {
+    return p.name
 }
 
-pub fn (p Plugin) plugin(s vega.Server) {
+pub fn (p Plugin) version() string {
+    return p.version
+}
+
+pub fn (p Plugin) register(s vega.Server) {
 }
