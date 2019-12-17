@@ -12,4 +12,4 @@ ADD deps.edn .
 ADD src src
 RUN clojure -A:native-image
 EXPOSE 8080
-CMD /app/convey-api.core -XX:+PrintGC -XX:+PrintGCTimeStamps -XX:+VerboseGC +XX:+PrintHeapShape -Xmx256m
+CMD ["/app/convey-api.core", "-XX:+PrintGC", "-XX:+PrintGCTimeStamps", "-XX:+VerboseGC", "+XX:+PrintHeapShape", "-Xmx256m"]

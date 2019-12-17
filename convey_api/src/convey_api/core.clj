@@ -5,7 +5,6 @@
 (defonce server ^:private (atom nil))
 
 (defn app [req]
-  (println (:uri req))
   {:status 200
    :headers {"Content-Type" "text/html"}
    :body "<h1>hello</h1>"})
