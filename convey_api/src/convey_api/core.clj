@@ -2,10 +2,10 @@
   (:gen-class)
   (:require [org.httpkit.server :as http]))
 
-(defonce server (atom nil))
+(defonce server ^:private (atom nil))
 
 (defn app [req]
-  (prinln (:uri req))
+  (println (:uri req))
   {:status 200
    :headers {"Content-Type" "text/html"}
    :body "<h1>hello</h1>"})
