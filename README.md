@@ -3,7 +3,7 @@ This is a small experiment of running a clojure project on GraalVM container usi
 Compare to the similar app using Golang https://github.com/sher/graal-clojure/blob/master/convey_api/alter.go
 
 ## Goods
-- Container startup time significantly imroves, compared to JVM container
+- Container startup time improved significantly, compared to JVM container
 
 ## Not so goods
-- Using class reflrections with native-image is irestricted
+- There are limitations using native-image like class reflrections etc.
